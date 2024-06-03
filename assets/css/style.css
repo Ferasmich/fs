@@ -243,4 +243,28 @@ body{
     .portfolio-navbar.fixed-top + .page{
         padding-top: 6rem;
     }
+
+    .progress {
+        background-color: #f3f3f3;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+    
+    .progress-bar {
+        background-color: #0096FF;
+        height: 30px;
+        line-height: 30px;
+        color: white;
+        text-align: center;
+        width: 0;
+        transition: width 2s ease;
+    }
+    
+    .percentage {
+        font-weight: bold;
+        margin-left: 10px;
+        color: #0096FF;
+    }
+    
 }
