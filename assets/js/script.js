@@ -7,17 +7,21 @@ document.addEventListener("DOMContentLoaded", function() {
         const percentageElem = percentages[index];
         
         // Animate progress bar width
-        bar.style.width = `${target}%`;
+        setTimeout(() => {
+            bar.style.width = `${target}%`;
+        }, 500);  // Small delay to ensure animation starts from zero
 
         // Animate percentage text
         let count = 0;
-        const counter = setInterval(() => {
+        const increment = () => {
             if (count < target) {
                 count++;
                 percentageElem.textContent = `${count}%`;
+                setTimeout(increment, 3000 / target);  // Adjust the speed of counter as per your need
             } else {
-                clearInterval(counter);
+                percentageElem.textContent = `${target}%`;
             }
-        }, 2000 / target);  // Adjust the speed of counter as per your need
+        };
+        increment();
     });
 });
